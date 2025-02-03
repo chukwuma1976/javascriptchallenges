@@ -1,12 +1,15 @@
 function flatten(obj) {
-    let flattenedObj = {};
+    let flattenedObj = {};  //initial empty object to place new key value pairs
 
+    //loop through key value pairs
     for (const key in obj) {
+        //if key points to an object which is not an array (recall arrays ARE objects), then recursively flatten that object
         if (typeof obj[key] == "object" && !Array.isArray(obj[key])) {
             const tempObj = flatten(obj[key]);
             for (const tempKey in tempObj) {
                 flattenedObj[`${key}.${tempKey}`] = tempObj[tempKey];
             }
+            //if key points to an array then recursively flatten any objects present in the array
         } else if (Array.isArray(obj[key])) {
             if (obj[key].some(e => typeof e === "object"))
                 flattenedObj[key] = obj[key].map((element) => typeof element === "object" ? flatten(element) : element);
@@ -86,3 +89,9 @@ console.log(flatArrObj);
 
 const flat1 = flatArrObj[0];
 const flat2 = flatArrObj[1];
+console.log('*************************************************************************************************************************');
+console.log(flat2.children);
+console.log('*************************************************************************************************************************');
+console.log(flat2.children[0].children);
+console.log('*************************************************************************************************************************');
+console.log(flat2.children[0].children[1].children);
