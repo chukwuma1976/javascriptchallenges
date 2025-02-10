@@ -18,8 +18,9 @@ function findMostFrequentElement(arr) {
     return mostFrequent;
 }
 
-console.log(findMostFrequentElement([1, 2, 3, 4, 5, 1, 4, 5, 3, 6, 0, 9]));
 console.log(findMostFrequentElement([1, 2, 3, 4, 5, 1, 4, 9, 3, 6, 9, 9]));
 console.log(findMostFrequentElement([]));
 console.log(findMostFrequentElement([1, 2]));
 console.log(findMostFrequentElement([2]));
+console.log(findMostFrequentElement([true, true, true, false, false, true]));
+console.log(findMostFrequentElement("mirror mirror on the wall who is the fairest of them all".split(' ')));
