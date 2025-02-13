@@ -35,4 +35,6 @@ function calculate(exp) {
     }
 }
 
-console.log(calculate("15*5/6"));
+console.log(calculate("3 + 10 * 2"));
+console.log(calculate("4 / 3 / 2"));
+console.log(calculate("3 + 4 * 5"));
